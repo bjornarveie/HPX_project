@@ -12,6 +12,16 @@
 Keywords:
 
 - Asynchronous Many-Task (AMT)
+  - Programming model which sets out to cope with and overcome these challenges:
+    - Increases in concurrency
+    - Deep memory hierarchies
+    - Increased fail-stop errors
+    - Performance heterogenety
+      - Accelerators
+      - Thermal throttling
+      - General system noise
+      - Responses to transient failures
+      
   - Every program has a (DAG) task graph (either explicit or implicit), where the nodes are tasks and the edges are precedence constraints.
   - The DAG runtime can:
     - Detect parallelism
@@ -20,6 +30,10 @@ Keywords:
     - Load balance/work-steal
     - Move work to data
     - Do transparent fault-tolerance
+  - Task graph encodes provenance (origin) information for applications
+  - Logical identifications of tasks and data faciliates data and task
+    migration, enabling transparent load-balancing and fault-recovery via
+    runtime when nodes degrade or fail.
     
 - co-routines
 - futures
