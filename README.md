@@ -91,9 +91,28 @@
 - Channel? Parcelport? MPI
 - HPX: cmake build options (several backends for the same thing)
 - Intra-node, inter-node, NUMA
+
+
 - Latency hiding, "load balancing" -> partitioning -> futures -> solves this?
+  - Latency hiding:
+    - Improves machine utilization by enabling executions of useful operations while it is waiting for a communication operation of memory operation to complete.
+  - Load balancing:
+    - Improves the distribution of workloads over multiple processors or other computing resources.
+    - Aims to optimize resource use and maximize throughput.
+  - Futures and fine-grained parallelism helps to obtain this.
+  
+  
 - "Over-subscription": number of cores/ number of tasks
 - "Grain-size", "problem-sized", "how much work per item"
+  - Granularity is a measure of the amount of work which is performed by a task.
+  - Fine-grained parallelism:
+    - Program broken down to a large number of small tasks. These tasks are assigned individually to different processors.
+    - Work is evenly distributed among processors, hence, fine-grained parallelism facilitates load balancing.
+    - Shared memory architectures has a low communication overhead, which means they are well suited for fine-grained parallelism.
+  - Coarse-grained parallelism:
+    - Larger tasks.
+    - Might lead to load imbalance.
+    - Fails to exploit parallelism since a lot of the program is executed sequentially on one processor.
 
 ## Work log
 
