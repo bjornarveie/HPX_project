@@ -1,15 +1,15 @@
-# HPX
-### Evaluate Parallelism/Concurrency Concepts for C++ offered by HPX for Scientific Computing
+# Evaluate Parallelism/Concurrency Concepts for C++ offered by HPX for Scientific Computing
 
+## TODO list:
 
-1. Understand concepts in 1D_Stencil example (https://github.com/STEllAR-GROUP/hpx/tree/master/examples/1d_stencil)
-2. Run 1D_Stencil example, and benchmark.
-3. Understand concepts used in 2D_Stencil example (https://github.com/STEllAR-GROUP/tutorials/tree/master/examples/02_stencil)
-4. Run 2D_Stencil example, and benchmark.
-5. 2D_Stencil example is not partitioned "wisely" but "for educational purposes" -> think of how to improve this example in that respect
-6. Implement and Benchmark improved 2D_Stencil
+[] Understand concepts in 1D_Stencil example (https://github.com/STEllAR-GROUP/hpx/tree/master/examples/1d_stencil)
+[] Run 1D_Stencil example, and benchmark.
+[] Understand concepts used in 2D_Stencil example (https://github.com/STEllAR-GROUP/tutorials/tree/master/examples/02_stencil)
+[] Run 2D_Stencil example, and benchmark.
+[] 2D_Stencil example is not partitioned "wisely" but "for educational purposes" -> think of how to improve this example in that respect
+[] Implement and Benchmark improved 2D_Stencil
 
-Keywords:
+## Important concepts
 
 - Asynchronous Many-Task (AMT)
   - Programming model which sets out to cope with and overcome these challenges:
@@ -34,18 +34,52 @@ Keywords:
   - Logical identifications of tasks and data faciliates data and task
     migration, enabling transparent load-balancing and fault-recovery via
     runtime when nodes degrade or fail.
+  - Information found here: https://www.osti.gov/servlets/purl/1261059
     
 - co-routines
-- futures
+
+- Futures (part of C++ library since C++11)
+  - An object which can retrieve a value from a provider object or function, and therefore synchronizing this access if in different threads.
+  - These objects are only useful if they are valid, that is, they are currently associated with a shared state. 
+  - If you call future::get() on a (valid) future, the future blocks the thread until the provider has made the shared-state ready (giving it a value or an exception). In this way, two threads are synchronized.
+  
+  
 - Partitioned Global Address Space (PGAS)
+  - HPX uses Active Global Address Space (AGAS).
+
+- AGAS
+  - Any executing thread may access any object in the domain of the parallel application if it has the access rights.
+  - Does not assume cache coherence. 
+  - All global addresses within a Synchronous Domain are assumed to be cache coherent for those processor cores that incorporate transparent cache
+  - Differs from PGAS in that the PGAS is passive in terms of address translation.
+
 - Parcel
+  - Communicates data, invokes action at a distance, and distributes control flow through the migration of continuities.
+  - Bridges the gap of asynchrony between synchronous domains while maintaining symmetry of semantics between local and global execution. 
+  - Enable message-driven computation. May be seen as a form of "active messages".
+  - Enables work to be moved to data (and vice versa).
+  - Can cause actions to be invoked remotely and aynchronously (e.g. creation of threads at different system nodes or synchronous domains).
+  
 - MPI
 - OpenMP
 - Task (lightweight) vs. threads
 - context switching (Hardware-CS (heavy + full) software-CS (more lightweight))
+  - A mechanism to store and restore the state of a CPU assigned to a process or task. A context is the contents of the CPU registers and the program counter.
+  - Software approach:
+    - Save and reload only the state that needs to be changed.
+    - Provide a function that saves the current stack pointer and reloads the new stack pointer. When this function is called, the current instruction pointer pointing to the current stack pointer is stored in the old stack and the new instruction pointer pointing to the new stack pointer is popped of the new stack when the function returns.
+    - GP registers, flags and data must also be pushed to the old stack and popped of the new one.
+  - Hardware approach:
+    - Saves almost the whole register state and is therefore much slower.
+    - Suspends current process and stores the CPU's state somewhere in memory and retrieves the context of the new process and restores the CPU's registers with the new register values. Then returns to the location indicated by the PC to continue execution.
+- Info: https://shobhitsharda.wordpress.com/2011/05/31/context-switch-software-vs-hardware-approach/
+  
 - closure: what you pass as context to the "lambda"
 - "Charm++"
 - HPX uses BOOST::?
+  - Boost provides free peer-reviewed (and well working) portable libraries to C++.
+  
+  
 - SIMD "Vectorization", HPX uses "Vc" library for SIMD
 - channel? parcelport? MPI
 - HPX: cmake build options (several backends for the same thing)
@@ -53,3 +87,9 @@ Keywords:
 - latency hiding, "load balancing" -> partitioning -> futures -> solves this?
 - "over-subscription": number of cores/ number of tasks
 - "grain-size", "problem-sized", "how much work per item"
+
+## Work log
+
+#### 29.03.19
+
+- Started finding information about and understanding the most important concepts.
