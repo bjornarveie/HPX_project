@@ -11,7 +11,16 @@
 
 Keywords:
 
-- Asynchronous Many-Task (AMP)
+- Asynchronous Many-Task (AMT)
+  - Every program has a (DAG) task graph (either explicit or implicit), where the nodes are tasks and the edges are precedence constraints.
+  - The DAG runtime can:
+    - Detect parallelism
+    - Maximize concurrency
+    - Pipeline communication
+    - Load balance/work-steal
+    - Move work to data
+    - Do transparent fault-tolerance
+    
 - co-routines
 - futures
 - Partitioned Global Address Space (PGAS)
