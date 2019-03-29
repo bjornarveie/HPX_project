@@ -62,8 +62,15 @@
   
 - MPI
 - OpenMP
+  - OpenMP is a API that supports multi-platform shared memory multiprocessing programming in C, C++ and Fortran.
+  - Provides a portable, scalable model that gives programmers a simple and flexible interface for developing parallel applications. 
+
 - Task (lightweight) vs. threads
-- context switching (Hardware-CS (heavy + full) software-CS (more lightweight))
+  - Threading is a small set of threads each doing a specific task that benefit from running synchronously. 
+  - Tasking is more a specific strategy used in software engineering, where you dynamically create "tasks" to be accomplished. A task manager picks up these tasks and assign the tasks to threads that can accomplish them. This makes a program structure , where a program is just a succession of tasks being relayed (Task A finished -> trigger task B, when both task B and task C are done -> trigger task D. This is structured like a DAG as in AMT).
+  
+  
+- Context switching (Hardware-CS (heavy + full) software-CS (more lightweight))
   - A mechanism to store and restore the state of a CPU assigned to a process or task. A context is the contents of the CPU registers and the program counter.
   - Software approach:
     - Save and reload only the state that needs to be changed.
@@ -74,19 +81,19 @@
     - Suspends current process and stores the CPU's state somewhere in memory and retrieves the context of the new process and restores the CPU's registers with the new register values. Then returns to the location indicated by the PC to continue execution.
 - Info: https://shobhitsharda.wordpress.com/2011/05/31/context-switch-software-vs-hardware-approach/
   
-- closure: what you pass as context to the "lambda"
+- Closure: what you pass as context to the "lambda"
 - "Charm++"
 - HPX uses BOOST::?
   - Boost provides free peer-reviewed (and well working) portable libraries to C++.
   
   
 - SIMD "Vectorization", HPX uses "Vc" library for SIMD
-- channel? parcelport? MPI
+- Channel? Parcelport? MPI
 - HPX: cmake build options (several backends for the same thing)
-- intra-node, inter-node, NUMA
-- latency hiding, "load balancing" -> partitioning -> futures -> solves this?
-- "over-subscription": number of cores/ number of tasks
-- "grain-size", "problem-sized", "how much work per item"
+- Intra-node, inter-node, NUMA
+- Latency hiding, "load balancing" -> partitioning -> futures -> solves this?
+- "Over-subscription": number of cores/ number of tasks
+- "Grain-size", "problem-sized", "how much work per item"
 
 ## Work log
 
