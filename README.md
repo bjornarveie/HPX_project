@@ -93,6 +93,8 @@
     - By doing the same operation multiple places, CPUs thus can reduce the necessary HW for instruction decoding and scheduling. 
     - Current C++ compilers can automatically transform scalar codes to SIMD instructions (auto-vectorization), but the compiler cannot vectorize any given code to its most data-parallel variant. 
     - The Vc library provides the missing link. Its types enable explicitly stating data-parallel operations on multiple values.
+  - Info: https://github.com/VcDevel/Vc
+
 - Channel? Parcelport? MPI
 - HPX: cmake build options (several backends for the same thing)
 - Intra-node, inter-node, NUMA
@@ -108,6 +110,7 @@
   
   
 - "Over-subscription": number of cores/ number of tasks
+
 - "Grain-size", "problem-sized", "how much work per item"
   - Granularity is a measure of the amount of work which is performed by a task.
   - Fine-grained parallelism:
@@ -123,4 +126,4 @@
 
 #### 29.03.19
 
-- Started finding information about and understanding the most important concepts.
+- Started finding information about and understanding the most important concepts related to HPX and parallelism.
