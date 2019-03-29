@@ -79,7 +79,7 @@
   - Hardware approach:
     - Saves almost the whole register state and is therefore much slower.
     - Suspends current process and stores the CPU's state somewhere in memory and retrieves the context of the new process and restores the CPU's registers with the new register values. Then returns to the location indicated by the PC to continue execution.
-- Info: https://shobhitsharda.wordpress.com/2011/05/31/context-switch-software-vs-hardware-approach/
+  - Info: https://shobhitsharda.wordpress.com/2011/05/31/context-switch-software-vs-hardware-approach/
   
 - Closure: what you pass as context to the "lambda"
 - "Charm++"
