@@ -61,6 +61,8 @@
   - Can cause actions to be invoked remotely and aynchronously (e.g. creation of threads at different system nodes or synchronous domains).
   
 - MPI
+  - Standardized and portable message passing standard.
+  - Communication protocol for programming parallel computers.
 - OpenMP
   - OpenMP is a API that supports multi-platform shared memory multiprocessing programming in C, C++ and Fortran.
   - Provides a portable, scalable model that gives programmers a simple and flexible interface for developing parallel applications. 
