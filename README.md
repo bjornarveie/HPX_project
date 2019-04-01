@@ -129,3 +129,6 @@
 #### 29.03.19
 
 - Started finding information about and understanding the most important concepts related to HPX and parallelism.
+
+#### 01.04.19
+- Worked with 1D_stencil. Downloaded the requirements for running HPX.
