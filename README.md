@@ -135,3 +135,5 @@
 
 #### 03.04.19
 Worked with the Boost problem. Tried different versions of Boost. The problem was resolved installing version 1.62.0 instead. For some reason, CMake was not able to find the two libraries stated in the last post. According to the Boost libraries documentation they should be present also for the 1.67.0 version, but somehow it did not work(maybe they are saved in another location or something).
+
+The CMake ran perfectly. However, when making HPX, a new error occured. I used C++17, and some functions used in HPX are deprecated in C++17. Need to find a way to switch to C++11 as I think this is the version HPX is built upon.
