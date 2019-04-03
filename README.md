@@ -2,10 +2,12 @@
 
 ## TODO list:
 
-- [ ] Understand concepts in 1D_Stencil example (https://github.com/STEllAR-GROUP/hpx/tree/master/examples/1d_stencil)
-- [ ] Run 1D_Stencil example, and benchmark.
+- [x] Understand concepts in 1D_Stencil example (https://github.com/STEllAR-GROUP/hpx/tree/master/examples/1d_stencil)
+- [x] Run 1D_Stencil example.
+- [ ] Benchmark 1D_Stencil example.
 - [ ] Understand concepts used in 2D_Stencil example (https://github.com/STEllAR-GROUP/tutorials/tree/master/examples/02_stencil)
-- [ ] Run 2D_Stencil example, and benchmark.
+- [ ] Run 2D_Stencil example.
+- [ ] Benchmark 2D_Stencil example.
 - [ ] 2D_Stencil example is not partitioned "wisely" but "for educational purposes" -> think of how to improve this example in that respect
 - [ ] Implement and Benchmark improved 2D_Stencil
 
