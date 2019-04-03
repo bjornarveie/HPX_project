@@ -131,7 +131,7 @@
 - Started finding information about and understanding the most important concepts related to HPX and parallelism.
 
 #### 01.04.19
-- Tried installing newest version of Boost (1.67.0), but met some problems. Libraries context and thread were not installed correctly (although they are not noted as necessary for running HPX I got an error when trying to cmake HPX). HWLOC and CMake seems to be correctly installed. Used the Macports alternative in the HPX documentation.
+- Tried installing newest (stable) version of Boost (1.67.0), but met some problems. Libraries 'context' and 'thread' were not found by CMake (although they are not noted as necessary for running HPX I got an error when trying to cmake HPX). HWLOC and CMake seems to be correctly installed. Used the Macports alternative in the HPX documentation.
 
 #### 03.04.19
-Worked with the Boost problem. Tried different versions of Boost. The problem was resolved installing version 1.62.0 instead.
+Worked with the Boost problem. Tried different versions of Boost. The problem was resolved installing version 1.62.0 instead. For some reason, CMake was not able to find the two libraries stated in the last post. According to the Boost libraries documentation they should be present also for the 1.67.0 version, but somehow it did not work(maybe they are saved in another location or something).
