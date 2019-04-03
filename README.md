@@ -11,7 +11,7 @@
 
 ## Important concepts
 
-The important concepts needed to understand in this project are found in [Concepts](docs/concepts.md)
+The important concepts needed to understand in this project are found in a separate [concepts](docs/concepts) file.
 
 - Asynchronous Many-Task (AMT)
   - Programming model which sets out to cope with and overcome these challenges:
