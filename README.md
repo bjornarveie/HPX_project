@@ -28,3 +28,5 @@ The important concepts needed to understand in this project are found in a separ
 Worked with the Boost problem. Tried different versions of Boost. The problem was resolved installing version 1.62.0 instead. For some reason, CMake was not able to find the two libraries stated in the last post. According to the Boost libraries documentation they should be present also for the 1.67.0 version, but somehow it did not work(maybe they are saved in another location or something).
 
 The CMake ran perfectly. However, when making HPX, a new error occured. I used C++17, and some functions used in HPX are deprecated in C++17. EDIT: Found out that HPX appearently have some kind of fix for this, however, it is not working for me. They are also trying to enforce you to use C++17 if it is available (https://github.com/STEllAR-GROUP/hpx/blob/master/cmake/HPX_DetectCppDialect.cmake), so I do not think this is the problem, but I was able to compile using C++14 by using the command 'set (CMAKE_CXX_STANDARD 14)' in the CMakelists.txt in the HPX folder.
+
+Was finally able to build HPX using C++14, hopefully this will not make any problems in the future.
