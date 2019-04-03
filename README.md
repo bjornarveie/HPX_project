@@ -131,4 +131,7 @@
 - Started finding information about and understanding the most important concepts related to HPX and parallelism.
 
 #### 01.04.19
-- Worked with 1D_stencil. Downloaded the requirements for running HPX.
+- Tried installing Boost. Met some problems. Libraries context and thread were not installed correctly (although they are not noted as necessary for running HPX I got an error when trying to cmake HPX). HWLOC and CMake seems to be correctly installed. Used the Macports alternative in the HPX documentation.
+
+#### 03.04.19
+Worked with the Boost problem. Tried different versions of Boost.
