@@ -37,3 +37,10 @@ Was finally able to build HPX using C++14 (and run Hello World!), hopefully this
 Also, the 1d_stencil example was run, but I need to look into how it actually is running to maybe simulate for a longer time.
 
 NEXT UP; learn how to make my own projects/cmake etc. 
+
+#### 07.04.19
+Made a new project and was able to compile it. A lot of compile rules to remember, so I just post them here.
+
+cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_PREFIX_PATH=$HPX_ROOT -S ../
+
+This was the cmake line to compile the small Hello World program. Also, I was not able to make a empty main.cpp, so there must be some code there or else I get a linker error.
