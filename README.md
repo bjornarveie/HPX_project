@@ -47,3 +47,5 @@ This was the cmake line to compile the small Hello World program. Also, I was no
 
 #### 08.04.19
 Worked my way through both 1D_Stencil and 2D_Stencil.
+
+Things starts to get quite messy in example 5, but here I will try to explain.
