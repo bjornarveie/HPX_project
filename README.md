@@ -44,3 +44,6 @@ Made a new project and was able to compile it. A lot of compile rules to remembe
 cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_PREFIX_PATH=$HPX_ROOT -S ../
 
 This was the cmake line to compile the small Hello World program. Also, I was not able to make a empty main.cpp, so there must be some code there or else I get a linker error.
+
+#### 08.04.19
+Worked my way through both 1D_Stencil and 2D_Stencil.
