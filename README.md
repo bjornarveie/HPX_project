@@ -50,6 +50,8 @@ Worked my way through both 1D_Stencil and 2D_Stencil.
 
 ##### 1D_STENCIL
 
+###### Example 5
+
 Things starts to get quite messy in example 5, but here I will try to explain.
 
 - The struct parition server inherits from the component base. This struct has data of type partition data as a private variable. Every member function of this struct that may be invoked remotely must have a "action" attached to it. Here, the function get_data() may be invoked remotely and gets the action "get_data_action" attached to it by calling HPX_DEFINE_COMPONENT_DIRECT_ACTION(partition_server, get_data, get_data_action);.
@@ -60,5 +62,16 @@ HPX_REGISTER_ACTION(get_data_action);" needs to be run to expose the component c
 - In the struct "stepper" a lot of the usual stuff goes on. In heat_part something new happens. The function takes in a partition for left, middle and right. It uses dataflow and unwrapping to manage the DAG and unwrap the result. The dataflow uses get_data() to get the data for all three partitions before it passes this info to the unwrapping, and thus, synchronizing, since heat_part_data should not run before it has all three partitions ready. In the computation (in the unwrap) it uses heat_part_data (which uses heat to calculate the heat on every data unit in the given partition_data struct) and get_id() to place the partition data on the same locality as the middle partition, and in the end returns this new partition. 
 - An action is also exposed: "HPX_PLAIN_ACTION(stepper::heat_part, heat_part_action);". heat_part is wrapped as an action and is now available to be invoked remotely.
 - In the stepper function do_work(), U gets initilized with partitions (with a locality and values). The timesteps gets realized with a dataflow, and it uses heat_part_action() to find the next[i]. In the end the result after nt timesteps is returned.
+- This is only running on one locality, since the work is not distributed (only used find_here() to find localities).
+
+###### Example 6
+Here, with the function locidx, the work is distributed among all localities when initialzing U, in the line " U[0][i] = partition(localities[locidx(i, np, nl)], nx, double(i));". Now, data needs to be moved to the locality of the middle partition in the "heat_part()" function. A switch is added in the get_data() function to accomplish this. If the data needs to be sent to another locality, only the minimum needed is sent, that is, for the left partition the end element and for the right partition the first element.
+
+###### Example 7
+Here, the optimization starts. Since the middle always is contained locally, the heat_part function may be divided in two. In one place (in a dataflow function), all the local work with middle is done, while the remote calls of get_data() is done in another instance of dataflow (calculating the boundary elements when they are available).
+
+###### Example 8
+Here, the hpx_main is run on each locality (every locality has an instance of stepper, which now is a component with server and client base, and every locality runs do_work()).
 
 
+##### 2D_Stencil
