@@ -49,3 +49,14 @@ This was the cmake line to compile the small Hello World program. Also, I was no
 Worked my way through both 1D_Stencil and 2D_Stencil.
 
 Things starts to get quite messy in example 5, but here I will try to explain.
+
+- The struct parition server inherits from the component base. This struct has data of type partition data as a private variable. Every member function of this struct that may be invoked remotely must have a "action" attached to it. Here, the function get_data() may be invoked remotely and gets the action "get_data_action" attached to it by calling HPX_DEFINE_COMPONENT_DIRECT_ACTION(partition_server, get_data, get_data_action);.
+- Also (outside the struct), some calls needs to be done to expose the partition type remotely. "typedef hpx::components::component<partition_server> partition_server_type;
+HPX_REGISTER_COMPONENT(partition_server_type, partition_server);" and "typedef partition_server::get_data_action get_data_action;
+HPX_REGISTER_ACTION(get_data_action);" needs to be run to expose the component creation through hpx::new_(), and to expose the member function get_data().
+- In the struct "partition", which inherits from the client base, the creation of the partition server structs appear. A new type base_type is made through "typedef hpx::components::client_base<partition, partition_server> base_type;". In this struct, hpx::new_ is used to create a new partition server on a specified locality. Also, the member function get_data() (here, a furture) may get invoked within this struct.
+- In the struct "stepper" a lot of the usual stuff goes on. In heat_part something new happens. The function takes in a partition for left, middle and right. It uses dataflow and unwrapping to manage the DAG and unwrap the result. In the computation it uses heat_part_data (which uses heat to calculate the heat on every data unit in the given partition_data struct) and get_id() to place the partition data on the same locality as the middle partition, and in the end returns this new partition. It then uses get_data to get the data for all three partitions and when the results are ready, it returns.
+- An action is also exposed: "HPX_PLAIN_ACTION(stepper::heat_part, heat_part_action);". heat_part is wrapped as an action and is now available to be invoked remotely.
+- In the stepper function do_work(), U gets initilized with partitions (with a locality and values). The timesteps gets realized with a dataflow, and it uses heat_part_action() to find the next[i]. In the end the result after nt timesteps is returned.
+
+
