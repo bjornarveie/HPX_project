@@ -48,6 +48,8 @@ This was the cmake line to compile the small Hello World program. Also, I was no
 #### 08.04.19
 Worked my way through both 1D_Stencil and 2D_Stencil.
 
+##### 1D_STENCIL
+
 Things starts to get quite messy in example 5, but here I will try to explain.
 
 - The struct parition server inherits from the component base. This struct has data of type partition data as a private variable. Every member function of this struct that may be invoked remotely must have a "action" attached to it. Here, the function get_data() may be invoked remotely and gets the action "get_data_action" attached to it by calling HPX_DEFINE_COMPONENT_DIRECT_ACTION(partition_server, get_data, get_data_action);.
