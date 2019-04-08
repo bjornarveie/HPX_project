@@ -57,6 +57,7 @@
 ## Task (lightweight) vs. threads
   - Threading is a small set of threads each doing a specific task that benefit from running synchronously. 
   - Tasking is more a specific strategy used in software engineering, where you dynamically create "tasks" to be accomplished. A task manager picks up these tasks and assign the tasks to threads that can accomplish them. This makes a program structure , where a program is just a succession of tasks being relayed (Task A finished -> trigger task B, when both task B and task C are done -> trigger task D. This is structured like a DAG as in AMT).
+  - Lightweight threads are essential for good performance with task-based programs. Lightweight refers to smaller stacks and faster context switching compared to OS-threads. Smaller overheads allow the program to be broken up into smaller tasks, which in turns helps the runtime fully utilize all processing units.
   
   
 ## Context switching (Hardware-CS (heavy + full) software-CS (more lightweight))
