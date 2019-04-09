@@ -77,3 +77,9 @@ Here, the hpx_main is run on each locality (every locality has an instance of st
 
 ##### 2D_Stencil
 To run the example, I needed to change the Cmake minimum required version to 3.3.2 in CMakeLists.txt. I was able to run the 2D_stencil example.
+
+#### 09.04.19
+### First progress meeting was done today.
+
+
+
