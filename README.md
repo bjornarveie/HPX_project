@@ -81,5 +81,6 @@ To run the example, I needed to change the Cmake minimum required version to 3.3
 #### 09.04.19
 ### First progress meeting was done today.
 
-
+#### 17.04.19
+Started doing some research in how to implement the new partition scheme.
 
