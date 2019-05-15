@@ -94,3 +94,6 @@ Continued research, ready for several days of coding...
 After using parts of the last days to examine and verify my thoughts about the potential of an already made partition scheme by HPX, I altered the code a little bit to make the scheme more like the scheme we discussed in the first meeting. 
 
 NB: needed to set the boost_root and boost library path again, and used "cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -S ../" to be able to run the code. 
+
+#### 15.05.19
+### Second progress meeting was done today.
