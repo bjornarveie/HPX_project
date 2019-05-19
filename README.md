@@ -10,7 +10,7 @@
 - [ ] Benchmark 2D_Stencil example.
 - [ ] 2D_Stencil example is not partitioned "wisely" but "for educational purposes" -> think of how to improve this example in that respect
 - [ ] Implement and Benchmark improved 2D_Stencil
-- [ ] Implement new partition scheme, with multiple rows as a partition at size n.
+- [x] Implement new partition scheme, with multiple rows as a partition at size n.
 - [ ] Try parameters Nx, Ny (1-to-1), threads (1-8), oversubscription, steps. Runtime (1 sec per step). Measure setup time.
 - [ ] Reference implementation with Open MP (write serial code, then add OPEN MP (pragma omp parallel for)).
 - [ ] Use malloc if it is not to difficult to install.
@@ -97,3 +97,7 @@ NB: needed to set the boost_root and boost library path again, and used "cmake -
 
 #### 15.05.19
 ### Second progress meeting was done today.
+
+
+#### 19.05.19
+Started working with benchmarking on my laptop. Need to find a way to save my results in a proper fashion.
