@@ -100,4 +100,4 @@ NB: needed to set the boost_root and boost library path again, and used "cmake -
 
 
 #### 19.05.19
-Started working with benchmarking on my laptop. Need to find a way to save my results in a proper fashion.
+Started working with benchmarking on my laptop. The first day or two will consist of research and find the different ways to save the console output in a file and use the best method for me, and also write a script to parse the output data to make it user friendly for analysis in (for example Python). I will also need to write the serial code with OpenMP for loop (and read up on OpenMP). The next days, from 21th of May I will start benchmarking and saving the results and hopefully I will meet my goal by the end of the week.
