@@ -13,6 +13,7 @@
 - [x] Implement new partition scheme, with multiple rows as a partition at size n.
 - [ ] Try parameters Nx, Ny (1-to-1), threads (1-8), oversubscription, steps. Runtime (1 sec per step). Measure setup time.
 - [ ] Reference implementation with Open MP (write serial code, then add OPEN MP (pragma omp parallel for)).
+- [ ] Build release version of both programs.
 - [ ] Use malloc if it is not to difficult to install.
 
 ## Important concepts
