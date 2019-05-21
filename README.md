@@ -2,15 +2,18 @@
 
 ## TODO list:
 
+### Solved:
+
 - [x] Understand concepts in 1D_Stencil example (https://github.com/STEllAR-GROUP/hpx/tree/master/examples/1d_stencil)
 - [x] Run 1D_Stencil example.
-- [ ] Benchmark 1D_Stencil example.
 - [x] Understand concepts used in 2D_Stencil example (https://github.com/STEllAR-GROUP/tutorials/tree/master/examples/02_stencil)
-- [x] Run 2D_Stencil example.
-- [ ] Benchmark 2D_Stencil example.
-- [x] 2D_Stencil example is not partitioned "wisely" but "for educational purposes" -> think of how to improve this example in that respect
-- [ ] Implement and Benchmark improved 2D_Stencil
+- [x] 2D_Stencil example is not partitioned "wisely" but "for educational purposes" -> think of how to improve this example in that respect.
 - [x] Implement new partition scheme, with multiple rows as a partition at size n.
+- [x] Run 2D_Stencil example.
+
+### Unsolved:
+
+- [ ] Benchmark 2D_Stencil example.
 - [ ] Try parameters Nx, Ny (1-to-1), threads (1-8), oversubscription, steps. Runtime (1 sec per step). Measure setup time.
 - [ ] Reference implementation with Open MP (write serial code, then add OPEN MP (pragma omp parallel for)).
 - [ ] Build release version of both programs.
