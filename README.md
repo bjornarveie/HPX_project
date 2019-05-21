@@ -5,10 +5,10 @@
 - [x] Understand concepts in 1D_Stencil example (https://github.com/STEllAR-GROUP/hpx/tree/master/examples/1d_stencil)
 - [x] Run 1D_Stencil example.
 - [ ] Benchmark 1D_Stencil example.
-- [ ] Understand concepts used in 2D_Stencil example (https://github.com/STEllAR-GROUP/tutorials/tree/master/examples/02_stencil)
+- [x] Understand concepts used in 2D_Stencil example (https://github.com/STEllAR-GROUP/tutorials/tree/master/examples/02_stencil)
 - [x] Run 2D_Stencil example.
 - [ ] Benchmark 2D_Stencil example.
-- [ ] 2D_Stencil example is not partitioned "wisely" but "for educational purposes" -> think of how to improve this example in that respect
+- [x] 2D_Stencil example is not partitioned "wisely" but "for educational purposes" -> think of how to improve this example in that respect
 - [ ] Implement and Benchmark improved 2D_Stencil
 - [x] Implement new partition scheme, with multiple rows as a partition at size n.
 - [ ] Try parameters Nx, Ny (1-to-1), threads (1-8), oversubscription, steps. Runtime (1 sec per step). Measure setup time.
