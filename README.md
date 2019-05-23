@@ -110,3 +110,6 @@ Results: to save the console output: run the code as normal, but add "> outputfi
 
 #### 21.05.19
 Started experimenting with the parameters. Found nice parameters and I am ready to start saving the results. 
+
+#### 23.05.19
+Started looking into OpenMP and wrote the serial code. 
