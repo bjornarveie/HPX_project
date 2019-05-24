@@ -1,0 +1,9 @@
+/Users/bjornarveie/2D_stencil/build/CMakeFiles/edit_cache.dir
+/Users/bjornarveie/2D_stencil/build/CMakeFiles/rebuild_cache.dir
+/Users/bjornarveie/2D_stencil/build/CMakeFiles/stencil_parallel_5.dir
+/Users/bjornarveie/2D_stencil/build/CMakeFiles/stencil_parallel_4.dir
+/Users/bjornarveie/2D_stencil/build/CMakeFiles/stencil_parallel_3.dir
+/Users/bjornarveie/2D_stencil/build/CMakeFiles/stencil_parallel_2.dir
+/Users/bjornarveie/2D_stencil/build/CMakeFiles/stencil_parallel_1.dir
+/Users/bjornarveie/2D_stencil/build/CMakeFiles/stencil_parallel_0.dir
+/Users/bjornarveie/2D_stencil/build/CMakeFiles/stencil_serial.dir
