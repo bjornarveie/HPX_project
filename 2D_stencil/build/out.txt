@@ -1,3 +1,0 @@
-Using 1 localities
-Running example using 5 Partitions
-MLUPS: 614.457

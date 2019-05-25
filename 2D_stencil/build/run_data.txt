@@ -1,4 +1,0 @@
-Localities: 1 
-Threads: 2 
-Steps: 20 
-num_local_partitions: 5 

@@ -188,7 +188,7 @@ void worker(
     if (rank == 0)
     {
         double mlups = (((Nx - 2.) * (Ny * num - 2.) * steps) / 1e6)/ elapsed;
-        results.open("results.txt");
+        results.open("results.txt", std::fstream::app);
         results << "MLUPS: " << mlups << "\n";
         results << "Time: " << elapsed << "\n";
         results.close();
@@ -217,7 +217,7 @@ int hpx_main(boost::program_options::variables_map& vm)
 
     std::ofstream run_data;
 
-    run_data.open("run_data.txt");
+    run_data.open("run_data.txt", std::fstream::app);
 
     run_data << "Localities: " << num_localities << " \n";
     run_data << "Threads: " << hpx::get_os_thread_count() << " \n";

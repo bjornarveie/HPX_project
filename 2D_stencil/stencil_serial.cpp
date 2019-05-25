@@ -7,6 +7,11 @@
 #include "output.hpp"
 
 #include <hpx/hpx_init.hpp>
+#include <hpx/include/compute.hpp>
+#include <hpx/include/lcos.hpp>
+#include <hpx/include/async.hpp>
+#include <hpx/include/components.hpp>
+#include <hpx/include/parallel_algorithm.hpp>
 #include <hpx/util/high_resolution_timer.hpp>
 
 #include <boost/program_options.hpp>
@@ -55,7 +60,19 @@ int hpx_main(boost::program_options::variables_map& vm)
     double elapsed = t.elapsed();
 
     double mlups = (((Nx - 2.) * (Ny - 2.) * steps) / 1e6)/ elapsed;
-    std::cout << "MLUPS: " << mlups << "\n";
+    std::ofstream results_openmp;
+    results_openmp.open("results_openmp.txt", std::fstream::app);
+    results_openmp << "MLUPS: " << mlups << "\n";
+    results_openmp << "Time: " << elapsed << "\n";
+    results_openmp.close();
+
+    std::ofstream run_data_openmp;
+    run_data_openmp.open("run_data_openmp.txt", std::fstream::app);
+    run_data_openmp << "Nx: " << Nx << "\n";
+    run_data_openmp << "Ny: " << Ny << "\n";
+    run_data_openmp << "Threads: " << hpx::get_os_thread_count() << "\n";
+    run_data_openmp << "Steps: " << steps << "\n";
+    run_data_openmp.close();
 
     if (vm.count("output"))
         output(vm["output"].as<std::string>(), U[0], Nx, Ny);
