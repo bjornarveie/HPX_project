@@ -189,8 +189,7 @@ void worker(
     {
         double mlups = (((Nx - 2.) * (Ny * num - 2.) * steps) / 1e6)/ elapsed;
         results.open("results.txt", std::fstream::app);
-        results << "MLUPS: " << mlups << "\n";
-        results << "Time: " << elapsed << "\n";
+        results << mlups << "\t" << elapsed << std::endl;
         results.close();
     }
     
@@ -218,11 +217,7 @@ int hpx_main(boost::program_options::variables_map& vm)
     std::ofstream run_data;
 
     run_data.open("run_data.txt", std::fstream::app);
-
-    run_data << "Localities: " << num_localities << " \n";
-    run_data << "Threads: " << hpx::get_os_thread_count() << " \n";
-    run_data << "Steps: " << steps << " \n";
-    run_data << "num_local_partitions: " << num_local_partitions << " \n";
+    run_data << Nx << "\t"  << Ny << "\t" << hpx::get_os_thread_count() << "\t" << steps << "\t" << num_localities << "\t" << num_local_partitions << std::endl;
     run_data.close();
     // We divide our grid in stripes along the y axis.
     std::size_t Ny = Ny_global / num_partitions;

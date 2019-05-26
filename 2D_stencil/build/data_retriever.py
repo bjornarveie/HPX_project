@@ -1,5 +1,7 @@
 import re
 import pandas as pd
-run_data_openmp = open('run_data_openmp.txt','r')
-df = pd.DataFrame.from_records(run_data_openmp)
-print(df)
+df_run_openmp = pd.read_csv('run_data_openmp.txt',sep = "\t",header=None,names=['Nx','Ny','Threads','Steps'])
+
+df_results_openmp = pd.read_csv('results_openmp.txt',sep = "\t",header=None,names=['MLUPS','Time'])
+print(df_run_openmp)
+print(df_results_openmp)
