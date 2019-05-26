@@ -188,7 +188,7 @@ void worker(
     if (rank == 0)
     {
         double mlups = (((Nx - 2.) * (Ny * num - 2.) * steps) / 1e6)/ elapsed;
-        results.open("results.txt", std::fstream::app);
+        results.open("results_parallel.txt", std::fstream::app);
         results << mlups << "\t" << elapsed << std::endl;
         results.close();
     }
@@ -216,7 +216,7 @@ int hpx_main(boost::program_options::variables_map& vm)
 
     std::ofstream run_data;
 
-    run_data.open("run_data.txt", std::fstream::app);
+    run_data.open("run_data_parallel.txt", std::fstream::app);
     run_data << Nx << "\t"  << Ny << "\t" << hpx::get_os_thread_count() << "\t" << steps << "\t" << num_localities << "\t" << num_local_partitions << std::endl;
     run_data.close();
     // We divide our grid in stripes along the y axis.
