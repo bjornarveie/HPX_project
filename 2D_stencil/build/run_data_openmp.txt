@@ -1,8 +1,0 @@
-Nx: 12000
-Ny: 12000
-Threads: 4
-Steps: 5
-Nx: 12000
-Ny: 12000
-Threads: 8
-Steps: 5

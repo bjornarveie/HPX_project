@@ -62,12 +62,12 @@ int hpx_main(boost::program_options::variables_map& vm)
     double mlups = (((Nx - 2.) * (Ny - 2.) * steps) / 1e6)/ elapsed;
     std::ofstream results_openmp;
     results_openmp.open("results_openmp.txt", std::fstream::app);
-    results_openmp << mlups << "\t" << elapsed << endl;
+    results_openmp << mlups << "\t" << elapsed << std::endl;
     results_openmp.close();
 
     std::ofstream run_data_openmp;
     run_data_openmp.open("run_data_openmp.txt", std::fstream::app);
-    run_data_openmp << Nx << "\t" << Ny << "\t" << hpx::get_os_thread_count() << "\t" << steps << endl;
+    run_data_openmp << Nx << "\t" << Ny << "\t" << hpx::get_os_thread_count() << "\t" << steps << std::endl;
     run_data_openmp.close();
 
     if (vm.count("output"))
