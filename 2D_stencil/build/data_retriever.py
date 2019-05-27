@@ -1,17 +1,27 @@
 import re
 import pandas as pd
-df_run_openmp = pd.read_csv('run_data_openmp.txt',sep = "\t",header=None,names=['Nx','Ny','Threads','Steps'])
+import matplotlib.pyplot as plt
 
+
+df_run_openmp = pd.read_csv('run_data_openmp.txt',sep = "\t",header=None,names=['Nx','Ny','Threads','Steps'])
 df_results_openmp = pd.read_csv('results_openmp.txt',sep = "\t",header=None,names=['MLUPS','Time'])
 
 
-df_results_parallel = pd.read_csv('resultstxt',sep = "\t",header=None,names=['MLUPS','Time'])
+df_results_parallel = pd.read_csv('results_parallel.txt',sep = "\t",header=None,names=['MLUPS','Time'])
+df_run_parallel = pd.read_csv('run_data_parallel.txt',sep = "\t",header=None,names=['Nx','Ny','Threads','Steps','Localities','Local partitions'])
 
-df_run_parallel= pd.read_csv('run_data.txt',sep = "\t",header=None,names=['Nx','Ny','Threads','Steps','Localities','Local partitions'])
-print(df_run_openmp)
-print(df_results_openmp)
+df_parallel = df_run_parallel.join(df_results_parallel)
+df_openmp = df_run_openmp.join(df_results_openmp)
 
-print('---------------------')
+#print(df_parallel.dtypes)
 
-print(df_run_parallel)
-print(df_results_parallel)
+df_partitions = df_parallel.groupby('Local partitions')
+
+print(df_partitions)
+
+#print(df_openmp.groupby(['Threads'])['MLUPS'].mean())
+
+#df_parallel.plot(x='Threads',y='MLUPS')
+#plt.show()
+
+#df_openmp.plot(x='Threads',y='MLUPS')

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/bjornarveie/2D_stencil
+# Install script for directory: /Users/bjornarveie/HPX_project/2D_stencil
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/bjornarveie/2D_stencil/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/bjornarveie/HPX_project/2D_stencil/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

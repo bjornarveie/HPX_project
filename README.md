@@ -114,5 +114,5 @@ Started experimenting with the parameters. Found nice parameters and I am ready 
 #### 23.05.19
 Started looking into OpenMP and wrote the serial code. 
 
-#### 24.05.19 - 26.05.19
+#### 24.05.19 - 27.05.19
 Continued working and finalized the benchmarking on this computer.

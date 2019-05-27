@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/bjornarveie/2D_stencil/stencil_serial.cpp" "/Users/bjornarveie/2D_stencil/build/CMakeFiles/stencil_serial.dir/stencil_serial.cpp.o"
+  "/Users/bjornarveie/HPX_project/2D_stencil/stencil_serial.cpp" "/Users/bjornarveie/HPX_project/2D_stencil/build/CMakeFiles/stencil_serial.dir/stencil_serial.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

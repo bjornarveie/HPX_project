@@ -6,45 +6,45 @@
 
 #IncludeRegexTransform: 
 
-/Users/bjornarveie/2D_stencil/communicator.hpp
+/Users/bjornarveie/HPX_project/2D_stencil/communicator.hpp
 hpx/include/lcos.hpp
 -
 array
 -
 
-/Users/bjornarveie/2D_stencil/line_iterator.hpp
+/Users/bjornarveie/HPX_project/2D_stencil/line_iterator.hpp
 hpx/util/iterator_facade.hpp
 -
 
-/Users/bjornarveie/2D_stencil/output.hpp
+/Users/bjornarveie/HPX_project/2D_stencil/output.hpp
 fstream
 -
 string
 -
 
-/Users/bjornarveie/2D_stencil/row_iterator.hpp
+/Users/bjornarveie/HPX_project/2D_stencil/row_iterator.hpp
 line_iterator.hpp
-/Users/bjornarveie/2D_stencil/line_iterator.hpp
+/Users/bjornarveie/HPX_project/2D_stencil/line_iterator.hpp
 hpx/util/iterator_facade.hpp
 -
 
-/Users/bjornarveie/2D_stencil/stencil.hpp
+/Users/bjornarveie/HPX_project/2D_stencil/stencil.hpp
 line_iterator.hpp
-/Users/bjornarveie/2D_stencil/line_iterator.hpp
+/Users/bjornarveie/HPX_project/2D_stencil/line_iterator.hpp
 row_iterator.hpp
-/Users/bjornarveie/2D_stencil/row_iterator.hpp
+/Users/bjornarveie/HPX_project/2D_stencil/row_iterator.hpp
 algorithm
 -
 array
 -
 
-/Users/bjornarveie/2D_stencil/stencil_parallel_4.cpp
+/Users/bjornarveie/HPX_project/2D_stencil/stencil_parallel_4.cpp
 stencil.hpp
-/Users/bjornarveie/2D_stencil/stencil.hpp
+/Users/bjornarveie/HPX_project/2D_stencil/stencil.hpp
 output.hpp
-/Users/bjornarveie/2D_stencil/output.hpp
+/Users/bjornarveie/HPX_project/2D_stencil/output.hpp
 communicator.hpp
-/Users/bjornarveie/2D_stencil/communicator.hpp
+/Users/bjornarveie/HPX_project/2D_stencil/communicator.hpp
 hpx/hpx_init.hpp
 -
 hpx/include/compute.hpp
@@ -60,7 +60,7 @@ hpx/include/parallel_algorithm.hpp
 hpx/util/high_resolution_timer.hpp
 -
 hpx/util/annotated_function.hpp
-/Users/bjornarveie/2D_stencil/hpx/util/annotated_function.hpp
+/Users/bjornarveie/HPX_project/2D_stencil/hpx/util/annotated_function.hpp
 array
 -
 algorithm
