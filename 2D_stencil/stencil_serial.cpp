@@ -42,7 +42,7 @@ int hpx_main(boost::program_options::variables_map& vm)
     // row to avoid out of bound accesses.
     iterator curr(Nx, U[0].begin());
     iterator next(Nx, U[1].begin());
-    #pragma omp parallel for
+    
     for (std::size_t t = 0; t < steps; ++t)
     {
         // We store the result of our update in the next middle line.
@@ -50,6 +50,7 @@ int hpx_main(boost::program_options::variables_map& vm)
         auto result = next.middle + Nx;
 
         // Iterate over the interior: skip the first and last column
+        #pragma omp parallel for
         for(auto it = curr + 1; it != curr + Ny - 1; ++it)
         {
             result = line_update(*it, *it + Nx, result);

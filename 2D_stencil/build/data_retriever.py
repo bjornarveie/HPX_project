@@ -15,9 +15,9 @@ df_openmp = df_run_openmp.join(df_results_openmp)
 
 #print(df_parallel.dtypes)
 
-df_partitions = df_parallel.groupby('Local partitions')
+print(df_parallel.groupby('Threads')['MLUPS'].mean())
 
-print(df_partitions)
+#print(df_partitions)
 
 #print(df_openmp.groupby(['Threads'])['MLUPS'].mean())
 

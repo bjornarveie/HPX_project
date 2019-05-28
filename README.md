@@ -17,6 +17,9 @@
 ### Unsolved:
 
 - [ ] Benchmark 2D_Stencil example.
+- [ ] See if it converges. Loop over and find max distance to one and also normalized (ab value from 1 and add all up, then divide by number of cells).
+- [ ] Connect to cluster and see if it works.
+- [ ] Redo the benchmarking under optimal conditions.
 - [ ] Use malloc if it is not to difficult to install.
 
 ## Important concepts
