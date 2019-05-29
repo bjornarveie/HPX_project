@@ -21,6 +21,8 @@
 - [ ] Connect to cluster and see if it works.
 - [ ] Redo the benchmarking under optimal conditions.
 - [ ] Use malloc if it is not to difficult to install.
+- [ ] Install HPX and hwloc on cluster.
+- [ ] Find out how to find the correct folder.
 
 ## Important concepts
 
