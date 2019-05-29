@@ -13,12 +13,12 @@
 - [x] Try parameters Nx, Ny (1-to-1), threads (1-8), oversubscription, steps. Runtime (1 sec per step). Measure setup time.
 - [x] Reference implementation with Open MP (write serial code, then add OPEN MP (pragma omp parallel for)).
 - [x] Build release version of both programs.
+- [x] Connect to cluster and see if it works.
 
 ### Unsolved:
 
 - [ ] Benchmark 2D_Stencil example.
 - [ ] See if it converges. Loop over and find max distance to one and also normalized (ab value from 1 and add all up, then divide by number of cells).
-- [ ] Connect to cluster and see if it works.
 - [ ] Redo the benchmarking under optimal conditions.
 - [ ] Use malloc if it is not to difficult to install.
 - [ ] Install HPX and hwloc on cluster.
