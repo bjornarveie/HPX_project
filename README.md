@@ -23,6 +23,8 @@
 - [ ] Use malloc if it is not to difficult to install.
 - [ ] Install HPX and hwloc on cluster.
 - [ ] Find out how to find the correct folder.
+- [ ] Questions: How to compile on VSC Cluster. How to find correct folder? Load
+modules into the home folders? Possible to save textfiles? SLRM files? 
 
 ## Important concepts
 
