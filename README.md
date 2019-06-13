@@ -127,3 +127,6 @@ Continued working and finalized the benchmarking on this computer.
 
 #### 10.06.19
 Redid the benchmarking.
+
+#### 13.06.19
+Installed HWLOC on the cluster. Was able to run make on cluster for HPX, but the compilation failed. Need to get gcc version >= 4.9 for it to work.
