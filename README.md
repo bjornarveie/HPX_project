@@ -123,3 +123,7 @@ Started looking into OpenMP and wrote the serial code.
 
 #### 24.05.19 - 27.05.19
 Continued working and finalized the benchmarking on this computer.
+
+
+#### 10.06.19
+Redid the benchmarking.
