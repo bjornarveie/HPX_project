@@ -14,6 +14,7 @@
 - [x] Reference implementation with Open MP (write serial code, then add OPEN MP (pragma omp parallel for)).
 - [x] Build release version of both programs.
 - [x] Connect to cluster and see if it works.
+- [x] Install HPX and hwloc on cluster.
 
 ### Unsolved:
 
@@ -21,10 +22,7 @@
 - [ ] See if it converges. Loop over and find max distance to one and also normalized (ab value from 1 and add all up, then divide by number of cells).
 - [ ] Redo the benchmarking under optimal conditions.
 - [ ] Use malloc if it is not to difficult to install.
-- [ ] Install HPX and hwloc on cluster.
-- [ ] Find out how to find the correct folder.
-- [ ] Questions: How to compile on VSC Cluster. How to find correct folder? Load
-modules into the home folders? Possible to save textfiles? SLRM files? 
+ 
 
 ## Important concepts
 
@@ -130,3 +128,7 @@ Redid the benchmarking.
 
 #### 13.06.19
 Installed HWLOC on the cluster. Was able to run make on cluster for HPX, but the compilation failed. Need to get gcc version >= 4.9 for it to work.
+
+#### 17.06.19
+Fixed the make error on HPX. I linked to the wrong folder for the new gcc compiler... Got another make error, but fixed it by using this command in CMakelists.txt:
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DBOOST_MATH_DISABLE_FLOAT128"). So I was able to compile HPX.
