@@ -132,3 +132,7 @@ Installed HWLOC on the cluster. Was able to run make on cluster for HPX, but the
 #### 17.06.19
 Fixed the make error on HPX. I linked to the wrong folder for the new gcc compiler... Got another make error, but fixed it by using this command in CMakelists.txt:
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DBOOST_MATH_DISABLE_FLOAT128"). So I was able to compile HPX.
+
+#### 19.06.19
+Made a separate cluster directory and compiled my code inside there. Tomorrow I will start the benchmarking on the cluster.
+
