@@ -37,14 +37,14 @@ void init(
         std::fill(U[1].end() - Nx, U[1].end(), 1.0);
     }
 
-    for (std::size_t x = 0; x < Nx; x++)
-    {
-        for (std::size_t y = 0; y < Ny; y++)
-        {
-            std::cout << U[0][y*Nx+x];
-        }
-        std::cout << std::endl;
-    }
+//    for (std::size_t x = 0; x < Nx; x++)
+//    {
+//        for (std::size_t y = 0; y < Ny; y++)
+//        {
+//            std::cout << U[0][y*Nx+x];
+//        }
+//        std::cout << std::endl;
+//    }
 }
 
     
@@ -58,7 +58,7 @@ OutIter line_update(InIter begin, InIter end, OutIter result)
     {
         *result = 0.25 * (it.up[-1] + it.up[+1] + it.down[-1]  + it.down[+1])
             - *it.middle;
-        std::cout << *result << std::endl;
+//        std::cout << *result << std::endl;
     }
     ++result;
 

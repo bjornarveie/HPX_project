@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH -J bench
+#SBATCH -N 2
+#SBATCH --ntasks-per-node=8
+#SBATCH --ntasks-per-core=1
+#SBATCH --nthreads-per-core=1
+#SBATCH --time=8
+#SBATCH --mail-type=END
+#SBATCH --mail-user=bjornar.veie@hotmail.com
+#SBATCH --partition=mem_0128
+#SBATCH --qos=devel_0128
+
+./cluster/2D_stencil/build/stencil_parallel_5 --Nx=10000 --Ny=10000 --steps=50 --rows-per-partition=5000 --hpx:threads=1 --hpx:localities=1
+./cluster/2D_stencil/build/stencil_parallel_5 --Nx=10000 --Ny=10000 --steps=50 --rows-per-partition=5000 --hpx:threads=1 --hpx:localities=1
+./cluster/2D_stencil/build/stencil_parallel_5 --Nx=10000 --Ny=10000 --steps=50 --rows-per-partition=5000 --hpx:threads=1 --hpx:localities=1
+
+wait
+
+./cluster/2D_stencil/build/stencil_parallel_5 --Nx=10000 --Ny=10000 --steps=50 --rows-per-partition=5000 --hpx:threads=1 --hpx:localities=2
+./cluster/2D_stencil/build/stencil_parallel_5 --Nx=10000 --Ny=10000 --steps=50 --rows-per-partition=5000 --hpx:threads=1 --hpx:localities=2
+./cluster/2D_stencil/build/stencil_parallel_5 --Nx=10000 --Ny=10000 --steps=50 --rows-per-partition=5000 --hpx:threads=1 --hpx:localities=2
+

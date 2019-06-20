@@ -57,31 +57,31 @@ int hpx_main(boost::program_options::variables_map& vm)
         }
 
         
-       	std::cout << "----------------------" << std::endl;     
+//       	std::cout << "----------------------" << std::endl;     
 
         std::swap(curr, next);
 
-        for (std::size_t x = 0; x < Nx; x++)
-		{
-		    for (std::size_t y = 0; y < Ny; y++)
-		    {
-		        std::cout << U[0][y*Nx+x] << " ";
-		    }
-		    std::cout << std::endl;
-		} 
+//      for (std::size_t x = 0; x < Nx; x++)
+//		{
+//		    for (std::size_t y = 0; y < Ny; y++)
+//		    {
+//		        std::cout << U[0][y*Nx+x] << " ";
+//		    }
+//		    std::cout << std::endl;
+//		} 
     }
-    //double elapsed = t.elapsed();
+    double elapsed = t.elapsed();
 
-    //double mlups = (((Nx - 2.) * (Ny - 2.) * steps) / 1e6)/ elapsed;
-    //std::ofstream results_openmp;
-    //results_openmp.open("results_openmp_threads.txt", std::fstream::app);
-    //results_openmp << mlups << "\t" << elapsed << std::endl;
-    //results_openmp.close();
+    double mlups = (((Nx - 2.) * (Ny - 2.) * steps) / 1e6)/ elapsed;
+    std::ofstream results_openmp;
+    results_openmp.open("results_openmp_threads.txt", std::fstream::app);
+    results_openmp << mlups << "\t" << elapsed << std::endl;
+    results_openmp.close();
 
-    //std::ofstream run_data_openmp;
-    //run_data_openmp.open("run_data_openmp_threads.txt", std::fstream::app);
-    //run_data_openmp << Nx << "\t" << Ny << "\t" << hpx::get_os_thread_count() << "\t" << steps << std::endl;
-    //run_data_openmp.close();
+    std::ofstream run_data_openmp;
+    run_data_openmp.open("run_data_openmp_threads.txt", std::fstream::app);
+    run_data_openmp << Nx << "\t" << Ny << "\t" << hpx::get_os_thread_count() << "\t" << steps << std::endl;
+    run_data_openmp.close();
 
     if (vm.count("output"))
         output(vm["output"].as<std::string>(), U[0], Nx, Ny);

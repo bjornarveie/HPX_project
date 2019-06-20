@@ -136,3 +136,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DBOOST_MATH_DISABLE_FLOAT128"). So I wa
 #### 19.06.19
 Made a separate cluster directory and compiled my code inside there. Tomorrow I will start the benchmarking on the cluster.
 
+#### 20.06.19
+Created my first batchscript and submitted it. Waiting for the results.
+
