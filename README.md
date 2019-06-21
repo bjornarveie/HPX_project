@@ -139,3 +139,6 @@ Made a separate cluster directory and compiled my code inside there. Tomorrow I 
 #### 20.06.19
 Created my first batchscript and submitted it. Waiting for the results.
 
+#### 21.06.19
+I fixed the issue with the LD_LIBRARY_PATH by adding the gcc lib64 folder and removing the /lib64/ folder with the old libstdc++.so.6 file.
+Used this command "export LD_LIBRARY_PATH=/opt/sw/x86_64/glibc-2.17/ivybridge-ep/boost/1.62.0/gcc/5.3/mpioff/1.0/python/3.4/lib:/opt/sw/x86_64/glibc-2.17/ivybridge-ep/python/3.4.2/gcc/5.3/lib:/lib:/opt/sw/x86_64/glibc-2.17/ivybridge-ep/gcc/5.3.0//lib64:/opt/sw/x86_64/glibc-2.17/ivybridge-ep/gcc/5.3.0//lib:/opt/slurm/current/lib:/opt/slurm/current/lib/slurm"

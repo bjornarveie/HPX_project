@@ -89,8 +89,9 @@ void worker(
     {
         step_future = step_future.then([&comm, policy, curr, next, Ny, Nx, t](hpx::future<void>&& prev) mutable
         {
-            // Trigger possible errors...
+	    // Trigger possible errors...
             prev.get();
+
 
             // Update our upper boundary if we have an interior partition and an
             // upper neighbor
@@ -217,12 +218,12 @@ int hpx_main(boost::program_options::variables_map& vm)
     std::size_t num_local_partitions = num_partitions / num_localities;
 
     std::ofstream run_data_parallel;
-
-    run_data_parallel.open("run_data_parallel_partition.txt", std::fstream::app);
-    run_data_parallel << Nx << "\t"  << Ny_global << "\t" << hpx::get_os_thread_count() << "\t" << steps << "\t" << num_localities << "\t" << num_local_partitions << std::endl;
-    run_data_parallel.close();
-
-
+    if (rank==0){
+    	run_data_parallel.open("run_data_parallel_partition.txt", std::fstream::app);
+    	run_data_parallel << Nx << "\t"  << Ny_global << "\t" << hpx::get_os_thread_count() << "\t" << steps << "\t" << num_localities << "\t" << num_local_partitions << std::endl;
+    	run_data_parallel.close();
+    }
+    
     // We divide our grid in stripes along the y axis.
     std::size_t Ny = Ny_global / num_partitions;
 

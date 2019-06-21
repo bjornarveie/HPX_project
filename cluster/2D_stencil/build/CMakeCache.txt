@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//No help, variable specified on the command line.
+BOOST_ROOT:UNINITIALIZED=/opt/sw/x86_64/glibc-2.17/ivybridge-ep/boost/1.62.0/gcc/5.3/mpioff/1.0/python/3.4
+
 //Path to a program.
 CMAKE_AR:FILEPATH=/bin/ar
 
@@ -117,7 +120,7 @@ CMAKE_INSTALL_MANDIR:PATH=
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=/usr/local
+CMAKE_INSTALL_PREFIX:PATH=/home/lv70977/veie/hpx_1.2.1
 
 //system admin executables (sbin)
 CMAKE_INSTALL_SBINDIR:PATH=sbin
@@ -157,9 +160,6 @@ CMAKE_OBJCOPY:FILEPATH=/bin/objcopy
 
 //Path to a program.
 CMAKE_OBJDUMP:FILEPATH=/bin/objdump
-
-//No help, variable specified on the command line.
-CMAKE_PREFIX_PATH:UNINITIALIZED=/home/lv70977/veie/hpx_1.2.1
 
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=stencil
@@ -249,6 +249,9 @@ HPX_GIT_COMMIT:STRING=unknown
 //Define which allocator should be linked in. Options are: system,
 // tcmalloc, jemalloc, tbbmalloc, and custom (default is: tcmalloc)
 HPX_WITH_MALLOC:STRING=system
+
+//No help, variable specified on the command line.
+HWLOC_ROOT:UNINITIALIZED=/home/lv70977/veie/hwloc
 
 //Value Computed by CMake
 stencil_BINARY_DIR:STATIC=/home/lv70977/veie/HPX_project/cluster/2D_stencil/build
@@ -420,5 +423,5 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 HPX_EXPORT_TARGETS:INTERNAL=
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/home/lv70977/veie/hpx_1.2.1
 
