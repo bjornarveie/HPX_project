@@ -56,7 +56,7 @@ OutIter line_update(InIter begin, InIter end, OutIter result)
     // Iterate over the interior: skip the last and first element
     for(InIter it = begin + 1; it != end - 1; it++, ++result)
     {
-        *result = 0.25 * (it.up[-1] + it.up[+1] + it.down[-1]  + it.down[+1])
+        *result = 0.25 * (it.up[0] + it.middle[+1]+ it.middle[-1]  + it.down[0])
             - *it.middle;
         //std::cout << *result << std::endl;
     }
