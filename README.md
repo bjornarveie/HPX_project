@@ -145,3 +145,6 @@ Used this command "export LD_LIBRARY_PATH=/opt/sw/x86_64/glibc-2.17/ivybridge-ep
 
 #### 22.06.19 - 25.06.19
 Tried to make the code run faster without any luck. Made changes in how the line update is made.
+
+#### 04.07.19
+Found out how to debug with HPX. Will start the debugging this weekend.
